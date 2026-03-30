@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alessandro Sansossio — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #FAFAF8;
+    --surface: #FFFFFF;
+    --text-primary: #1A1A1A;
+    --text-secondary: #6B6B6B;
+    --text-muted: #9A9A9A;
+    --accent: #1A1A2E;
+    --accent-light: #025add;
+    --border: #E8E8E4;
+    --tag-bg: #F0F0EC;
+    --highlight: #E8F4F0;
+    --highlight-text: #1B6B52;
+    --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+    --shadow-hover: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.05);
+  }
+
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    page-break-after: always;
+  }
+
+  .page:last-child { page-break-after: avoid; }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .header-role {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  .header-contact {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* CASE STUDY */
+  .case-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .case-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .case-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    font-weight: 400;
+  }
+
+  .case-url {
+    font-size: 0.85rem;
+    color: var(--accent-light);
+    text-decoration: none;
+    font-weight: 1000;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1px;
+  }
+
+  /* META ROW */
+  .meta-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 30px 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .meta-item {
+    padding: 20px 24px;
+    border-right: 1px solid var(--border);
+  }
+
+  .meta-item:last-child { border-right: none; }
+
+  .meta-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .meta-value {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  /* TAGS */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0 32px;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 5px 14px;
+    background: var(--tag-bg);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.01em;
+  }
+
+  /* SECTIONS */
+  .section-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    margin-top: 36px;
+  }
+
+  .summary {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 780px;
+  }
+
+  /* WORK ITEMS */
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .work-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .work-card:hover { box-shadow: var(--shadow-hover); }
+
+  .work-card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .work-card-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+
+  .work-card-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .icon-shopify { background: #F0FAF0; color: #2D8E2D; }
+  .icon-ads { background: #EEF0FF; color: #4A5AE8; }
+  .icon-email { background: #FFF5EC; color: #D4760A; }
+  .icon-auto { background: #F5ECFF; color: #8A4AE8; }
+  .icon-content { background: #FFECF5; color: #D44A8A; }
+
+  /* SCREENSHOT PLACEHOLDERS */
+  .screenshots {
+    margin-top: 36px;
+  }
+
+  .screenshot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .screenshot-placeholder {
+    background: var(--surface);
+    border: 2px dashed var(--border);
+    border-radius: 10px;
+    padding: 40px 24px;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+
+  .screenshot-placeholder:hover { border-color: var(--text-muted); }
+
+  .screenshot-placeholder .ph-icon {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    opacity: 0.4;
+  }
+
+  .screenshot-placeholder .ph-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .screenshot-placeholder .ph-hint {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .screenshot-full {
+    grid-column: 1 / -1;
+  }
+
+  /* HIGHLIGHT STAT */
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .highlight-card {
+    background: var(--highlight);
+    border-radius: 10px;
+    padding: 18px 20px;
+    text-align: center;
+  }
+
+  .highlight-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--highlight-text);
+    margin-bottom: 2px;
+  }
+
+  .highlight-label {
+    font-size: 0.7rem;
+    color: var(--highlight-text);
+    opacity: 0.75;
+    font-weight: 500;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 50px 0;
+  }
+
+  /* INSTRUCTIONS BOX */
+  .instructions {
+    background: #FFFBF0;
+    border-left: 3px solid #E8C547;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin: 40px 0;
+  }
+
+  .instructions-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #A08520;
+    margin-bottom: 8px;
+  }
+
+  .instructions-text {
+    font-size: 0.82rem;
+    color: #6B5A10;
+    line-height: 1.6;
+  }
+
+  .instructions-text ol {
+    margin-top: 8px;
+    padding-left: 18px;
+  }
+
+  .instructions-text li {
+    margin-bottom: 4px;
+  }
+
+  /* LIGHTBOX */
+  .portfolio-img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    cursor: zoom-in;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .portfolio-img:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(10, 10, 10, 0.92);
+    z-index: 9999;
+    cursor: zoom-out;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .lightbox-overlay.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+
+  .lightbox-overlay.active img {
+    transform: scale(1);
+  }
+
+  .lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 28px;
+    font-size: 1.6rem;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    z-index: 10000;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+  }
+
+  .lightbox-close:hover { color: #fff; }
+
+  /* PRINT */
+  @media print {
+    .lightbox-overlay { display: none !important; }
+    body { background: white; }
+    .page { padding: 40px 20px; }
+    .instructions { display: none; }
+    .screenshot-placeholder { border-style: solid; border-width: 1px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1: TAPPER GOURMET ============ -->
+<div class="page">
+
+  <div class="header">
+    <div class="header-name">Alessandro Sansossio</div>
+    <div class="header-role">Shopify & Meta Ads Manager · eCommerce Growth</div>
+    <div class="header-contact">Valencia, Spain · linkedin.com/in/alessandrosansossio</div>
+  </div>
+
+
+  <div class="case-label">Case Study 01</div>
+  <div class="case-title">Tapper Gourmet</div>
+  <div class="case-subtitle">Premium gourmet meal delivery — Valencia, Spain</div>
+  <a class="case-url" href="https://tappergourmet.com" target="_blank">tappergourmet.com</a>
+
+  <div class="meta-row">
+    <div class="meta-item">
+      <div class="meta-label">Role</div>
+      <div class="meta-value">Growth & eCommerce Manager</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Scope</div>
+      <div class="meta-value">Full digital infrastructure</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Timeline</div>
+      <div class="meta-value">Jan 2025 — Present</div>
+    </div>
+  </div>
+
+  <div class="tags">
+    <span class="tag">Shopify</span>
+    <span class="tag">Liquid</span>
+    <span class="tag">Meta Ads</span>
+    <span class="tag">Email Marketing</span>
+    <span class="tag">Shopify Flow</span>
+    <span class="tag">Make.com</span>
+    <span class="tag">Content Strategy</span>
+    <span class="tag">Video Editing</span>
+    <span class="tag">Copywriting</span>
+  </div>
+
+  <div class="section-title">Overview</div>
+  <p class="summary">Built and manage the entire digital system for a premium meal delivery brand in Valencia — from a custom Shopify store to a full-funnel Meta Ads strategy, post-purchase email automation, and content creation. The project covers every layer: acquisition, conversion, retention, and operations.</p>
+
+  <div class="section-title">Work Delivered</div>
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-card-icon icon-shopify">🛍</div>
+      <div class="work-card-title">Shopify Store</div>
+      <div class="work-card-desc">Custom theme (Taste), Liquid sections, postal code validator, optimized homepage, weekly menu selector, subscription pages.</div>
+    </div>
+    <div class="work-card">
+      <div class="work-card-icon icon-ads">📈</div>
+      <div class="work-card-title">Meta Ads</div>
+      <div class="work-card-desc">Conversion campaigns with funnel strategy: Welcome Pack as entry point to weekly subscription. Video + static creatives.</div>
+    </div>
+    <div class="work-card">
+      <div class="work-card-icon icon-email">📧</div>
+      <div class="work-card-title">Email Retention</div>
+      <div class="work-card-desc">4-email post-purchase flow (10 days) built with Shopify Flow. Converts one-time buyers into weekly subscribers.</div>
+    </div>
+    <div class="work-card">
+      <div class="work-card-icon icon-auto">⚡</div>
+      <div class="work-card-title">Automation</div>
+      <div class="work-card-desc">Make.com workflows connected to Google Sheets for order tracking and weekly dish selection per customer.</div>
+    </div>
+    <div class="work-card">
+      <div class="work-card-icon icon-content">🎬</div>
+      <div class="work-card-title">Content & Creative</div>
+      <div class="work-card-desc">Instagram strategy (5 content pillars), product photography, video editing, ad creatives, and copywriting.</div>
+    </div>
+  </div>
+
+  <!-- SCREENSHOT PLACEHOLDERS -->
+  <div class="screenshots">
+    <div class="section-title">Visual Evidence </div>
+    <div class="screenshot-grid">
+      <div class="screenshot-placeholder screenshot-full">
+        <img src="screenshot (5).png" alt="Tapper Gourmet Homepage" class="portfolio-img">
+      </div>
+      <div class="screenshot-placeholder">
+        <img src="screenshot (20).jpg" alt="Tapper Gourmet Homepage" class="portfolio-img">
+      </div>
+    <div class="screenshot-placeholder">
+        <img src="screenshot (9).png" alt="Tapper Gourmet Homepage" class="portfolio-img">
+      </div>
+      <div class="screenshot-placeholder">
+        <img src="screenshot (21).jpg" alt="Tapper Gourmet Homepage" class="portfolio-img">
+      </div>
+      <div class="screenshot-placeholder">
+        <img src="screenshot (8).png" alt="Tapper Gourmet Homepage" class="portfolio-img">
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- METRICS -->
+  <div class="section-title">Key Metrics </div>
+  <div class="highlights">
+    <div class="highlight-card">
+      <div class="highlight-value">€0.13</div>
+      <div class="highlight-label">Cost per click</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-value">3.59%</div>
+      <div class="highlight-label">CTR</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-value">151</div>
+      <div class="highlight-label">Retention flow</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ PAGE 2: MANIQUÍ CREACIONES ============ -->
+<div class="page">
+
+  <div class="header">
+  </div>
+
+  <div class="case-label">Case Study 02</div>
+  <div class="case-title">Maniquí Creaciones</div>
+  <div class="case-subtitle">Online clothing alteration service — Valencia, Spain</div>
+  <a class="case-url" href="https://maniquicreaciones.com" target="_blank">maniquicreaciones.com</a>
+
+  <div class="meta-row">
+    <div class="meta-item">
+      <div class="meta-label">Role</div>
+      <div class="meta-value">Digital Consultant</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Scope</div>
+      <div class="meta-value">Web, Ads & Email</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Timeline</div>
+      <div class="meta-value">Jan 2026 — Present</div>
+    </div>
+  </div>
+
+  <div class="tags">
+    <span class="tag">Shopify</span>
+    <span class="tag">Meta Ads</span>
+    <span class="tag">Email Marketing</span>
+    <span class="tag">UX Design</span>
+    <span class="tag">Copywriting</span>
+    <span class="tag">Local Business</span>
+  </div>
+
+  <div class="section-title">Overview</div>
+  <p class="summary">Designed, built and launched the complete digital presence for a local clothing alteration service — from a Shopify store optimized for service bookings to geo-targeted Meta Ads campaigns in Valencia and email marketing communications.</p>
+
+  <div class="section-title">Work Delivered</div>
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-card-icon icon-shopify">🛍</div>
+      <div class="work-card-title">Shopify Store</div>
+      <div class="work-card-desc">Full store design from scratch. Homepage, pricing page, service booking flow, and contact page — all optimized for service conversion.</div>
+    </div>
+    <div class="work-card">
+      <div class="work-card-icon icon-ads">📈</div>
+      <div class="work-card-title">Meta Ads</div>
+      <div class="work-card-desc">First campaign launch with €100/month budget. Geo-targeted to Valencia with conversion objective.</div>
+    </div>
+    <div class="work-card">
+      <div class="work-card-icon icon-email">📧</div>
+      <div class="work-card-title">Email Marketing</div>
+      <div class="work-card-desc">Customer communication setup and ongoing email marketing management.</div>
+    </div>
+  </div>
+
+  <!-- SCREENSHOT PLACEHOLDERS -->
+  <div class="screenshots">
+    <div class="section-title">Visual Evidence </div>
+    <div class="screenshot-grid">
+      <div class="screenshot-placeholder screenshot-full">
+        <img src="screenshot (10).png" alt="Tapper Gourmet Homepage" class="portfolio-img">
+      </div>
+      <div class="screenshot-placeholder">
+        <img src="screenshot (12).png" alt="Tapper Gourmet Homepage" class="portfolio-img">
+      </div>
+      <div class="screenshot-placeholder">
+        <img src="screenshot (13).png" alt="Tapper Gourmet Homepage" class="portfolio-img">
+      </div>
+      <div class="screenshot-placeholder">
+        <img src="Captura de pantalla 2026-03-18 115552.jpg" alt="Tapper Gourmet Homepage" class="portfolio-img">
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Key Metrics </div>
+  <div class="highlights">
+    <div class="highlight-card">
+      <div class="highlight-value">€100</div>
+      <div class="highlight-label">Monthly ad budget managed</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-value">€0.20</div>
+      <div class="highlight-label">Cost per click</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-value">15 days</div>
+      <div class="highlight-label">Store built in</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img src="" alt="Enlarged view" id="lightboxImg">
+</div>
+
+<script>
+  const overlay = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const lbClose = document.getElementById('lightboxClose');
+
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('portfolio-img')) {
+      lbImg.src = e.target.src;
+      lbImg.alt = e.target.alt;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  function closeLightbox() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  overlay.addEventListener('click', closeLightbox);
+  lbClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
