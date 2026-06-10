@@ -4,116 +4,144 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alessandro Sansossio — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg: #FAFAF8;
-    --surface: #FFFFFF;
-    --text-primary: #1A1A1A;
-    --text-secondary: #6B6B6B;
-    --text-muted: #9A9A9A;
-    --accent: #1A1A2E;
-    --accent-light: #025add;
-    --border: #E8E8E4;
-    --tag-bg: #F0F0EC;
-    --highlight: #E8F4F0;
-    --highlight-text: #1B6B52;
-    --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
-    --shadow-hover: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.05);
+    --paper:       #FBFAF7;
+    --surface:     #FFFFFF;
+    --ink:         #0a2540;
+    --ink-soft:    #3c4257;
+    --ink-muted:   #8898aa;
+    --accent:      #635bff;
+    --accent-soft: rgba(99,91,255,0.08);
+    --border:      #E9E7E0;
+    --chip-bg:     #0a2540;
+    --chip-text:   #FBFAF7;
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body:    'DM Sans', -apple-system, sans-serif;
+    --font-mono:    'DM Mono', 'SFMono-Regular', monospace;
   }
 
   body {
-    font-family: 'DM Sans', -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text-primary);
+    font-family: var(--font-body);
+    background: var(--paper);
+    color: var(--ink);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
   .page {
-    max-width: 900px;
+    max-width: 880px;
     margin: 0 auto;
-    padding: 60px 40px;
+    padding: 64px 40px;
     page-break-after: always;
   }
-
   .page:last-child { page-break-after: avoid; }
 
-  /* HEADER */
+  /* ===== HEADER ===== */
   .header {
-    text-align: center;
-    margin-bottom: 60px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 28px;
+    margin-bottom: 56px;
+    border-bottom: 2px solid var(--ink);
   }
 
   .header-name {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2rem;
+    font-family: var(--font-display);
+    font-size: 1.7rem;
     font-weight: 600;
-    letter-spacing: 0.03em;
-    color: var(--accent);
-    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
   }
+
+  .header-name .dot { color: var(--accent); }
+
+  .header-meta {
+    text-align: right;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+  }
+
+  .header-meta a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--border); }
 
   .header-role {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    font-weight: 400;
-    letter-spacing: 0.02em;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-weight: 500;
+    margin-top: 2px;
   }
 
-  .header-contact {
-    margin-top: 12px;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    letter-spacing: 0.04em;
-  }
-
-  /* CASE STUDY */
+  /* ===== CASE HEADER ===== */
   .case-label {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
     font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 12px;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .case-label::before {
+    content: "";
+    display: inline-block;
+    width: 26px;
+    height: 1px;
+    background: var(--accent);
   }
 
   .case-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.85rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 6px;
-    line-height: 1.2;
+    font-family: var(--font-display);
+    font-size: 2.3rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 8px;
   }
 
   .case-subtitle {
     font-size: 0.95rem;
-    color: var(--text-secondary);
-    margin-bottom: 30px;
-    font-weight: 400;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
   }
 
   .case-url {
-    font-size: 0.85rem;
-    color: var(--accent-light);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
     text-decoration: none;
-    font-weight: 1000;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--accent-soft);
     padding-bottom: 1px;
   }
 
-  /* META ROW */
+  .case-status {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    background: var(--accent-soft);
+    border-radius: 4px;
+    padding: 3px 10px;
+  }
+
+  /* ===== META ROW ===== */
   .meta-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin: 30px 0;
+    margin: 30px 0 26px;
     border: 1px solid var(--border);
     border-radius: 10px;
     overflow: hidden;
@@ -121,70 +149,73 @@
   }
 
   .meta-item {
-    padding: 20px 24px;
+    padding: 18px 22px;
     border-right: 1px solid var(--border);
   }
-
   .meta-item:last-child { border-right: none; }
 
   .meta-label {
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 4px;
+    color: var(--ink-muted);
+    margin-bottom: 5px;
   }
 
   .meta-value {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--ink);
+    line-height: 1.4;
   }
 
-  /* TAGS */
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 24px 0 32px;
-  }
+  /* ===== TAGS ===== */
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 36px; }
 
   .tag {
-    display: inline-block;
-    padding: 5px 14px;
-    background: var(--tag-bg);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    background: transparent;
+    border: 1px solid var(--border);
     border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    letter-spacing: 0.01em;
+    padding: 4px 13px;
   }
 
-  /* SECTIONS */
+  /* ===== SECTIONS ===== */
   .section-title {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 16px;
-    margin-top: 36px;
+    color: var(--ink-muted);
+    margin: 40px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
   }
 
   .summary {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    max-width: 780px;
+    font-size: 0.97rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    max-width: 720px;
   }
 
-  /* WORK ITEMS */
+  /* ===== WORK GRID ===== */
   .work-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px;
-    margin-top: 16px;
+    margin-top: 4px;
   }
 
   .work-card {
@@ -192,160 +223,91 @@
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 20px 22px;
-    transition: box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, transform 0.2s ease;
   }
 
-  .work-card:hover { box-shadow: var(--shadow-hover); }
-
-  .work-card-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-  }
+  .work-card:hover { border-color: var(--accent); transform: translateY(-1px); }
 
   .work-card-title {
     font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-primary);
+    font-weight: 700;
+    color: var(--ink);
     margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .work-card-title::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
   }
 
   .work-card-desc {
     font-size: 0.8rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
+    color: var(--ink-soft);
+    line-height: 1.6;
   }
 
-  .icon-shopify { background: #F0FAF0; color: #2D8E2D; }
-  .icon-ads { background: #EEF0FF; color: #4A5AE8; }
-  .icon-email { background: #FFF5EC; color: #D4760A; }
-  .icon-auto { background: #F5ECFF; color: #8A4AE8; }
-  .icon-content { background: #FFECF5; color: #D44A8A; }
-
-  /* SCREENSHOT PLACEHOLDERS */
-  .screenshots {
-    margin-top: 36px;
-  }
-
-  .screenshot-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 16px;
-  }
-
-  .screenshot-placeholder {
-    background: var(--surface);
-    border: 2px dashed var(--border);
-    border-radius: 10px;
-    padding: 40px 24px;
-    text-align: center;
-    transition: border-color 0.2s;
-  }
-
-  .screenshot-placeholder:hover { border-color: var(--text-muted); }
-
-  .screenshot-placeholder .ph-icon {
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-    opacity: 0.4;
-  }
-
-  .screenshot-placeholder .ph-label {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    margin-bottom: 4px;
-  }
-
-  .screenshot-placeholder .ph-hint {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    line-height: 1.4;
-  }
-
-  .screenshot-full {
-    grid-column: 1 / -1;
-  }
-
-  /* HIGHLIGHT STAT */
+  /* ===== METRIC CHIPS (signature) ===== */
   .highlights {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
-    margin-top: 16px;
+    margin-top: 4px;
   }
 
   .highlight-card {
-    background: var(--highlight);
+    background: var(--chip-bg);
     border-radius: 10px;
-    padding: 18px 20px;
-    text-align: center;
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .highlight-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
   }
 
   .highlight-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--highlight-text);
+    font-family: var(--font-mono);
+    font-size: 1.55rem;
+    font-weight: 500;
+    color: var(--chip-text);
+    letter-spacing: -0.02em;
     margin-bottom: 2px;
   }
 
   .highlight-label {
-    font-size: 0.7rem;
-    color: var(--highlight-text);
-    opacity: 0.75;
-    font-weight: 500;
-  }
-
-  /* DIVIDER */
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 50px 0;
-  }
-
-  /* INSTRUCTIONS BOX */
-  .instructions {
-    background: #FFFBF0;
-    border-left: 3px solid #E8C547;
-    border-radius: 0 8px 8px 0;
-    padding: 20px 24px;
-    margin: 40px 0;
-  }
-
-  .instructions-title {
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #A08520;
-    margin-bottom: 8px;
+    color: rgba(251,250,247,0.55);
   }
 
-  .instructions-text {
-    font-size: 0.82rem;
-    color: #6B5A10;
-    line-height: 1.6;
+  /* ===== SCREENSHOTS ===== */
+  .screenshot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 4px;
   }
 
-  .instructions-text ol {
-    margin-top: 8px;
-    padding-left: 18px;
-  }
+  .screenshot-full { grid-column: 1 / -1; }
 
-  .instructions-text li {
-    margin-bottom: 4px;
-  }
-
-  /* LIGHTBOX */
   .portfolio-img {
     width: 100%;
+    display: block;
     border-radius: 10px;
     border: 1px solid var(--border);
     cursor: zoom-in;
@@ -353,68 +315,111 @@
   }
 
   .portfolio-img:hover {
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 8px 28px rgba(10,37,64,0.10);
+    transform: translateY(-2px);
   }
 
+  .screenshot-placeholder {
+    border: 2px dashed var(--border);
+    border-radius: 10px;
+    padding: 44px 24px;
+    text-align: center;
+    background: var(--surface);
+  }
+
+  .screenshot-placeholder .ph-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+
+  .screenshot-placeholder .ph-hint {
+    font-size: 0.7rem;
+    color: var(--ink-muted);
+  }
+
+  /* ===== LIGHTBOX ===== */
   .lightbox-overlay {
     display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(10, 10, 10, 0.92);
+    inset: 0;
+    background: rgba(10,37,64,0.94);
     z-index: 9999;
     cursor: zoom-out;
     justify-content: center;
     align-items: center;
     padding: 40px;
     backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
     opacity: 0;
     transition: opacity 0.25s ease;
   }
 
-  .lightbox-overlay.active {
-    display: flex;
-    opacity: 1;
-  }
+  .lightbox-overlay.active { display: flex; opacity: 1; }
 
   .lightbox-overlay img {
     max-width: 90%;
     max-height: 90vh;
     border-radius: 8px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    transform: scale(0.95);
-    transition: transform 0.3s ease;
-  }
-
-  .lightbox-overlay.active img {
-    transform: scale(1);
   }
 
   .lightbox-close {
     position: fixed;
-    top: 20px;
-    right: 28px;
+    top: 20px; right: 28px;
     font-size: 1.6rem;
     color: rgba(255,255,255,0.7);
     cursor: pointer;
     z-index: 10000;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    transition: color 0.2s;
     background: none;
     border: none;
+    font-family: var(--font-body);
   }
-
   .lightbox-close:hover { color: #fff; }
 
-  /* PRINT */
+  /* ===== FOOTER ===== */
+  .site-footer {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 40px 56px;
+    text-align: center;
+  }
+
+  .footer-inner {
+    border-top: 1px solid var(--border);
+    padding-top: 28px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    line-height: 1.9;
+  }
+
+  .footer-inner a { color: var(--accent); text-decoration: none; }
+
+  /* ===== PRINT ===== */
   @media print {
     .lightbox-overlay { display: none !important; }
     body { background: white; }
-    .page { padding: 40px 20px; }
-    .instructions { display: none; }
+    .page { padding: 40px 24px; }
     .screenshot-placeholder { border-style: solid; border-width: 1px; }
+    .highlight-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    .page { padding: 40px 22px; }
+    .header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .header-meta { text-align: left; }
+    .meta-row { grid-template-columns: 1fr; }
+    .meta-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .meta-item:last-child { border-bottom: none; }
+    .work-grid, .highlights, .screenshot-grid { grid-template-columns: 1fr; }
+    .case-title { font-size: 1.8rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
   }
 </style>
 </head>
@@ -423,17 +428,22 @@
 <!-- ============ PAGE 1: TAPPER GOURMET ============ -->
 <div class="page">
 
-  <div class="header">
-    <div class="header-name">Alessandro Sansossio</div>
-    <div class="header-role">Shopify & Meta Ads Manager · eCommerce Growth</div>
-    <div class="header-contact">Valencia, Spain · linkedin.com/in/alessandrosansossio</div>
-  </div>
-
+  <header class="header">
+    <div>
+      <div class="header-name">Alessandro Sansossio<span class="dot">.</span></div>
+      <div class="header-role">Shopify & Meta Ads · eCommerce Growth</div>
+    </div>
+    <div class="header-meta">
+      Valencia, Spain<br>
+      <a href="https://www.linkedin.com/in/alessandro-sansossio/" target="_blank" rel="noopener">linkedin.com/in/alessandro-sansossio</a><br>
+      sansossiobss@gmail.com
+    </div>
+  </header>
 
   <div class="case-label">Case Study 01</div>
-  <div class="case-title">Tapper Gourmet</div>
-  <div class="case-subtitle">Premium gourmet meal delivery — Valencia, Spain</div>
-  <a class="case-url" href="https://tappergourmet.com" target="_blank">tappergourmet.com</a>
+  <h1 class="case-title">Tapper Gourmet</h1>
+  <p class="case-subtitle">Premium gourmet meal delivery — Valencia, Spain</p>
+  <span class="case-status">Own brand · Closed Apr 2026 after unit-economics analysis</span>
 
   <div class="meta-row">
     <div class="meta-item">
@@ -446,7 +456,7 @@
     </div>
     <div class="meta-item">
       <div class="meta-label">Timeline</div>
-      <div class="meta-value">Jan 2025 — Present</div>
+      <div class="meta-value">Jun 2024 — Apr 2026</div>
     </div>
   </div>
 
@@ -458,79 +468,60 @@
     <span class="tag">Shopify Flow</span>
     <span class="tag">Make.com</span>
     <span class="tag">Content Strategy</span>
-    <span class="tag">Video Editing</span>
     <span class="tag">Copywriting</span>
   </div>
 
   <div class="section-title">Overview</div>
-  <p class="summary">Built and manage the entire digital system for a premium meal delivery brand in Valencia — from a custom Shopify store to a full-funnel Meta Ads strategy, post-purchase email automation, and content creation. The project covers every layer: acquisition, conversion, retention, and operations.</p>
+  <p class="summary">Built and ran the entire digital system for a premium meal delivery brand in Valencia — custom Shopify store, full-funnel Meta Ads, post-purchase email automation and content. When the numbers showed the local-delivery model couldn't sustain paid acquisition profitably, I made the call to close it. Building it taught me the stack; closing it taught me to read a business.</p>
 
   <div class="section-title">Work Delivered</div>
   <div class="work-grid">
     <div class="work-card">
-      <div class="work-card-icon icon-shopify">🛍</div>
       <div class="work-card-title">Shopify Store</div>
-      <div class="work-card-desc">Custom theme (Taste), Liquid sections, postal code validator, optimized homepage, weekly menu selector, subscription pages.</div>
+      <div class="work-card-desc">Custom theme (Taste), Liquid sections, postal code validator, conversion-focused homepage, weekly menu selector, subscription pages.</div>
     </div>
     <div class="work-card">
-      <div class="work-card-icon icon-ads">📈</div>
       <div class="work-card-title">Meta Ads</div>
       <div class="work-card-desc">Conversion campaigns with funnel strategy: Welcome Pack as entry point to weekly subscription. Video + static creatives.</div>
     </div>
     <div class="work-card">
-      <div class="work-card-icon icon-email">📧</div>
       <div class="work-card-title">Email Retention</div>
-      <div class="work-card-desc">4-email post-purchase flow (10 days) built with Shopify Flow. Converts one-time buyers into weekly subscribers.</div>
+      <div class="work-card-desc">4-email post-purchase flow over 10 days built with Shopify Flow, converting one-time buyers into weekly subscribers.</div>
     </div>
     <div class="work-card">
-      <div class="work-card-icon icon-auto">⚡</div>
       <div class="work-card-title">Automation</div>
       <div class="work-card-desc">Make.com workflows connected to Google Sheets for order tracking and weekly dish selection per customer.</div>
     </div>
     <div class="work-card">
-      <div class="work-card-icon icon-content">🎬</div>
       <div class="work-card-title">Content & Creative</div>
-      <div class="work-card-desc">Instagram strategy (5 content pillars), product photography, video editing, ad creatives, and copywriting.</div>
+      <div class="work-card-desc">Instagram strategy (5 content pillars), product photography, video editing, ad creatives and copywriting.</div>
     </div>
   </div>
 
-  <!-- SCREENSHOT PLACEHOLDERS -->
-  <div class="screenshots">
-    <div class="section-title">Visual Evidence </div>
-    <div class="screenshot-grid">
-      <div class="screenshot-placeholder screenshot-full">
-        <img src="screenshot (5).png" alt="Tapper Gourmet Homepage" class="portfolio-img">
-      </div>
-      <div class="screenshot-placeholder">
-        <img src="screenshot (20).jpg" alt="Tapper Gourmet Homepage" class="portfolio-img">
-      </div>
-    <div class="screenshot-placeholder">
-        <img src="screenshot (9).png" alt="Tapper Gourmet Homepage" class="portfolio-img">
-      </div>
-      <div class="screenshot-placeholder">
-        <img src="screenshot (21).jpg" alt="Tapper Gourmet Homepage" class="portfolio-img">
-      </div>
-      <div class="screenshot-placeholder">
-        <img src="screenshot (8).png" alt="Tapper Gourmet Homepage" class="portfolio-img">
-      </div>
-      
+  <div class="section-title">Visual Evidence</div>
+  <div class="screenshot-grid">
+    <div class="screenshot-full">
+      <img src="img/tapper-01-homepage.png" alt="Tapper Gourmet — Shopify homepage" class="portfolio-img">
     </div>
+    <img src="img/tapper-02.jpg" alt="Tapper Gourmet — store section" class="portfolio-img">
+    <img src="img/tapper-03.png" alt="Tapper Gourmet — store section" class="portfolio-img">
+    <img src="img/tapper-04.jpg" alt="Tapper Gourmet — Meta Ads creative" class="portfolio-img">
+    <img src="img/tapper-05.png" alt="Tapper Gourmet — Meta Ads results" class="portfolio-img">
   </div>
 
-  <!-- METRICS -->
-  <div class="section-title">Key Metrics </div>
+  <div class="section-title">Key Metrics</div>
   <div class="highlights">
     <div class="highlight-card">
       <div class="highlight-value">€0.13</div>
-      <div class="highlight-label">Cost per click</div>
+      <div class="highlight-label">Cost per click (Meta)</div>
     </div>
     <div class="highlight-card">
       <div class="highlight-value">3.59%</div>
-      <div class="highlight-label">CTR</div>
+      <div class="highlight-label">CTR (Meta)</div>
     </div>
     <div class="highlight-card">
-      <div class="highlight-value">151</div>
-      <div class="highlight-label">Retention flow</div>
+      <div class="highlight-value">4 / 10d</div>
+      <div class="highlight-label">Retention flow (emails / days)</div>
     </div>
   </div>
 
@@ -539,13 +530,10 @@
 <!-- ============ PAGE 2: MANIQUÍ CREACIONES ============ -->
 <div class="page">
 
-  <div class="header">
-  </div>
-
   <div class="case-label">Case Study 02</div>
-  <div class="case-title">Maniquí Creaciones</div>
-  <div class="case-subtitle">Online clothing alteration service — Valencia, Spain</div>
-  <a class="case-url" href="https://maniquicreaciones.com" target="_blank">maniquicreaciones.com</a>
+  <h1 class="case-title">Maniquí Creaciones</h1>
+  <p class="case-subtitle">Online clothing alteration service — Valencia, Spain</p>
+  <a class="case-url" href="https://maniquicreaciones.com" target="_blank" rel="noopener">maniquicreaciones.com</a>
 
   <div class="meta-row">
     <div class="meta-item">
@@ -572,67 +560,162 @@
   </div>
 
   <div class="section-title">Overview</div>
-  <p class="summary">Designed, built and launched the complete digital presence for a local clothing alteration service — from a Shopify store optimized for service bookings to geo-targeted Meta Ads campaigns in Valencia and email marketing communications.</p>
+  <p class="summary">Designed, built and launched the complete digital presence for a local clothing alteration service — a Shopify store optimized for service bookings, geo-targeted Meta Ads in Valencia, and ongoing email marketing. Live store, real client, real budget.</p>
 
   <div class="section-title">Work Delivered</div>
   <div class="work-grid">
     <div class="work-card">
-      <div class="work-card-icon icon-shopify">🛍</div>
       <div class="work-card-title">Shopify Store</div>
-      <div class="work-card-desc">Full store design from scratch. Homepage, pricing page, service booking flow, and contact page — all optimized for service conversion.</div>
+      <div class="work-card-desc">Full store design from scratch in 15 days. Homepage, pricing page, service booking flow and contact page — optimized for service conversion.</div>
     </div>
     <div class="work-card">
-      <div class="work-card-icon icon-ads">📈</div>
       <div class="work-card-title">Meta Ads</div>
-      <div class="work-card-desc">First campaign launch with €100/month budget. Geo-targeted to Valencia with conversion objective.</div>
+      <div class="work-card-desc">Campaign management on a €100/month budget. Geo-targeted to Valencia with conversion objective.</div>
     </div>
     <div class="work-card">
-      <div class="work-card-icon icon-email">📧</div>
       <div class="work-card-title">Email Marketing</div>
       <div class="work-card-desc">Customer communication setup and ongoing email marketing management.</div>
     </div>
   </div>
 
-  <!-- SCREENSHOT PLACEHOLDERS -->
-  <div class="screenshots">
-    <div class="section-title">Visual Evidence </div>
-    <div class="screenshot-grid">
-      <div class="screenshot-placeholder screenshot-full">
-        <img src="screenshot (10).png" alt="Tapper Gourmet Homepage" class="portfolio-img">
-      </div>
-      <div class="screenshot-placeholder">
-        <img src="screenshot (12).png" alt="Tapper Gourmet Homepage" class="portfolio-img">
-      </div>
-      <div class="screenshot-placeholder">
-        <img src="screenshot (13).png" alt="Tapper Gourmet Homepage" class="portfolio-img">
-      </div>
-      <div class="screenshot-placeholder">
-        <img src="Captura de pantalla 2026-03-18 115552.jpg" alt="Tapper Gourmet Homepage" class="portfolio-img">
-      </div>
+  <div class="section-title">Visual Evidence</div>
+  <div class="screenshot-grid">
+    <div class="screenshot-placeholder screenshot-full">
+      <div class="ph-label">img/maniqui-01-homepage.png</div>
+      <div class="ph-hint">Captura nueva: homepage con el rediseño actual (desktop, full-width)</div>
+    </div>
+    <div class="screenshot-placeholder">
+      <div class="ph-label">img/maniqui-02-services.png</div>
+      <div class="ph-hint">Captura nueva: página de precios o servicios</div>
+    </div>
+    <div class="screenshot-placeholder">
+      <div class="ph-label">img/maniqui-03-booking.png</div>
+      <div class="ph-hint">Captura nueva: flujo de contratación/reserva</div>
+    </div>
+    <div class="screenshot-placeholder">
+      <div class="ph-label">img/maniqui-04-mobile.png</div>
+      <div class="ph-hint">Captura nueva: vista móvil de la home</div>
     </div>
   </div>
 
-  <div class="section-title">Key Metrics </div>
+  <div class="section-title">Key Metrics</div>
   <div class="highlights">
     <div class="highlight-card">
-      <div class="highlight-value">€100</div>
-      <div class="highlight-label">Monthly ad budget managed</div>
+      <div class="highlight-value">15 days</div>
+      <div class="highlight-label">Store built & launched</div>
     </div>
     <div class="highlight-card">
       <div class="highlight-value">€0.20</div>
-      <div class="highlight-label">Cost per click</div>
+      <div class="highlight-label">Cost per click (Meta)</div>
     </div>
     <div class="highlight-card">
-      <div class="highlight-value">15 days</div>
-      <div class="highlight-label">Store built in</div>
+      <div class="highlight-value">€100/mo</div>
+      <div class="highlight-label">Ad budget managed</div>
     </div>
   </div>
 
 </div>
 
+<!-- ============ PAGE 3: SHOPIFY STORE GRADER ============ -->
+<div class="page">
+
+  <div class="case-label">Case Study 03</div>
+  <h1 class="case-title">Shopify Store Grader</h1>
+  <p class="case-subtitle">Free audit tool for Shopify stores — built from scratch</p>
+  <a class="case-url" href="https://shopify-grader.vercel.app" target="_blank" rel="noopener">shopify-grader.vercel.app</a>
+
+  <div class="meta-row">
+    <div class="meta-item">
+      <div class="meta-label">Role</div>
+      <div class="meta-value">Design, code & product</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Scope</div>
+      <div class="meta-value">Full-stack web tool</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Timeline</div>
+      <div class="meta-value">2026 — Live</div>
+    </div>
+  </div>
+
+  <div class="tags">
+    <span class="tag">Node.js</span>
+    <span class="tag">Serverless</span>
+    <span class="tag">Vercel</span>
+    <span class="tag">PageSpeed API</span>
+    <span class="tag">AI Integration</span>
+    <span class="tag">UI Design</span>
+    <span class="tag">HTML/CSS/JS</span>
+  </div>
+
+  <div class="section-title">Overview</div>
+  <p class="summary">A tool that analyzes any Shopify store from its public URL and scores it 0–100 across SEO, performance, Shopify configuration and content quality — with actionable recommendations per check. I designed the interface, wrote the scoring logic and shipped it on Vercel serverless. It exists because auditing stores by hand was slow; now the first diagnosis takes 30 seconds.</p>
+
+  <div class="section-title">Work Delivered</div>
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-card-title">Audit Engine</div>
+      <div class="work-card-desc">26 automated checks across 4 categories: on-page SEO, Core Web Vitals via PageSpeed API, Shopify configuration and content signals.</div>
+    </div>
+    <div class="work-card">
+      <div class="work-card-title">AI Analysis Layer</div>
+      <div class="work-card-desc">AI-powered evaluation of homepage copy, product descriptions and CTA effectiveness, returning structured scores and recommendations.</div>
+    </div>
+    <div class="work-card">
+      <div class="work-card-title">UI & Report Design</div>
+      <div class="work-card-desc">Score gauge, category breakdowns, expandable check details and per-check recommendations. Designed mobile-first with a token-based CSS system.</div>
+    </div>
+    <div class="work-card">
+      <div class="work-card-title">Infrastructure</div>
+      <div class="work-card-desc">Vercel serverless functions, HTML parsing with Cheerio, graceful degradation when external APIs fail. No frameworks — vanilla stack by design.</div>
+    </div>
+  </div>
+
+  <div class="section-title">Visual Evidence</div>
+  <div class="screenshot-grid">
+    <div class="screenshot-placeholder screenshot-full">
+      <div class="ph-label">img/grader-01-landing.png</div>
+      <div class="ph-hint">Captura nueva: landing del Grader (dark, con el input de URL)</div>
+    </div>
+    <div class="screenshot-placeholder">
+      <div class="ph-label">img/grader-02-report.png</div>
+      <div class="ph-hint">Captura nueva: página de resultados con el gauge y categorías</div>
+    </div>
+    <div class="screenshot-placeholder">
+      <div class="ph-label">img/grader-03-checks.png</div>
+      <div class="ph-hint">Captura nueva: detalle de checks con recomendaciones</div>
+    </div>
+  </div>
+
+  <div class="section-title">Key Metrics</div>
+  <div class="highlights">
+    <div class="highlight-card">
+      <div class="highlight-value">26</div>
+      <div class="highlight-label">Automated checks</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-value">~30s</div>
+      <div class="highlight-label">Full store audit</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-value">0→1</div>
+      <div class="highlight-label">Designed, coded & shipped solo</div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    Alessandro Sansossio · Valencia, Spain<br>
+    <a href="mailto:sansossiobss@gmail.com">sansossiobss@gmail.com</a> · <a href="https://www.linkedin.com/in/alessandro-sansossio/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://shopify-grader.vercel.app" target="_blank" rel="noopener">Shopify Store Grader</a>
+  </div>
+</footer>
+
 <!-- LIGHTBOX -->
 <div class="lightbox-overlay" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
   <img src="" alt="Enlarged view" id="lightboxImg">
 </div>
 
@@ -655,11 +738,9 @@
     document.body.style.overflow = '';
   }
 
-  overlay.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeLightbox(); });
   lbClose.addEventListener('click', closeLightbox);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
-  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 
 </body>
