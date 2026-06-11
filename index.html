@@ -43,15 +43,63 @@
   }
   .page:last-child { page-break-after: avoid; }
 
+  /* ===== PROFILE (LinkedIn-style banner + avatar) ===== */
+  .profile {
+    margin-bottom: 56px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 28px;
+  }
+
+  .profile-banner {
+    width: 100%;
+    aspect-ratio: 4 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  .profile-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .profile-main {
+    display: flex;
+    align-items: flex-end;
+    gap: 28px;
+    margin-top: -64px;
+    padding-left: 28px;
+  }
+
+  .profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--paper);
+    background: var(--paper);
+    box-shadow: 0 2px 10px rgba(10,37,64,0.12);
+    flex-shrink: 0;
+    cursor: zoom-in;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .profile-pic:hover {
+    box-shadow: 0 8px 28px rgba(10,37,64,0.18);
+    transform: translateY(-2px);
+  }
+
+  .profile-id { padding-bottom: 4px; padding-top: 28px; }
+
   /* ===== HEADER ===== */
   .header {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     gap: 24px;
-    padding-bottom: 28px;
-    margin-bottom: 56px;
-    border-bottom: 2px solid var(--ink);
   }
 
   .header-name {
@@ -411,6 +459,10 @@
     .page { padding: 40px 22px; }
     .header { flex-direction: column; align-items: flex-start; gap: 8px; }
     .header-meta { text-align: left; }
+    .profile-row { flex-direction: column; align-items: flex-start; }
+    .profile-main { flex-direction: column; align-items: flex-start; gap: 10px; margin-top: -44px; padding-left: 16px; }
+    .profile-pic { width: 96px; height: 96px; }
+    .header-meta { padding-left: 16px; }
     .meta-row { grid-template-columns: 1fr; }
     .meta-item { border-right: none; border-bottom: 1px solid var(--border); }
     .meta-item:last-child { border-bottom: none; }
@@ -428,15 +480,21 @@
 <!-- ============ PAGE 1: TAPPER GOURMET ============ -->
 <div class="page">
 
-  <header class="header">
-    <div>
-      <div class="header-name">Alessandro Sansossio<span class="dot">.</span></div>
-      <div class="header-role">Shopify & Meta Ads · eCommerce Growth</div>
-    </div>
-    <div class="header-meta">
-      Valencia, Spain<br>
-      <a href="https://www.linkedin.com/in/alessandro-sansossio/" target="_blank" rel="noopener">linkedin.com/in/alessandro-sansossio</a><br>
-      sansossiobss@gmail.com
+  <header class="profile">
+    <img src="img/linkedinbanner.png" alt="" class="profile-banner">
+    <div class="profile-row">
+      <div class="profile-main">
+        <img src="img/profile-pic.png" alt="Alessandro Sansossio" class="profile-pic">
+        <div class="profile-id">
+          <div class="header-name">Alessandro Sansossio<span class="dot">.</span></div>
+          <div class="header-role">Shopify & Meta Ads · eCommerce Growth</div>
+        </div>
+      </div>
+      <div class="header-meta">
+        Valencia, Spain<br>
+        <a href="https://www.linkedin.com/in/alessandro-sansossio/" target="_blank" rel="noopener">linkedin.com/in/alessandro-sansossio</a><br>
+        sansossiobss@gmail.com
+      </div>
     </div>
   </header>
 
@@ -580,22 +638,12 @@
 
   <div class="section-title">Visual Evidence</div>
   <div class="screenshot-grid">
-    <div class="screenshot-placeholder screenshot-full">
-      <div class="ph-label">img/maniqui-01-homepage.png</div>
-      <div class="ph-hint">Captura nueva: homepage con el rediseño actual (desktop, full-width)</div>
+    <div class="screenshot-full">
+      <img src="img/maniqui-01-homepage.png" alt="Maniquí Creaciones — homepage" class="portfolio-img">
     </div>
-    <div class="screenshot-placeholder">
-      <div class="ph-label">img/maniqui-02-services.png</div>
-      <div class="ph-hint">Captura nueva: página de precios o servicios</div>
-    </div>
-    <div class="screenshot-placeholder">
-      <div class="ph-label">img/maniqui-03-booking.png</div>
-      <div class="ph-hint">Captura nueva: flujo de contratación/reserva</div>
-    </div>
-    <div class="screenshot-placeholder">
-      <div class="ph-label">img/maniqui-04-mobile.png</div>
-      <div class="ph-hint">Captura nueva: vista móvil de la home</div>
-    </div>
+    <img src="img/maniqui-02-services.png" alt="Maniquí Creaciones — services page" class="portfolio-img">
+    <img src="img/maniqui-03-booking.png" alt="Maniquí Creaciones — booking flow" class="portfolio-img">
+    <img src="img/maniqui-04-mobile.png" alt="Maniquí Creaciones — mobile view" class="portfolio-img">
   </div>
 
   <div class="section-title">Key Metrics</div>
@@ -674,18 +722,11 @@
 
   <div class="section-title">Visual Evidence</div>
   <div class="screenshot-grid">
-    <div class="screenshot-placeholder screenshot-full">
-      <div class="ph-label">img/grader-01-landing.png</div>
-      <div class="ph-hint">Captura nueva: landing del Grader (dark, con el input de URL)</div>
+    <div class="screenshot-full">
+      <img src="img/grader-01-landing.png" alt="Shopify Store Grader — landing" class="portfolio-img">
     </div>
-    <div class="screenshot-placeholder">
-      <div class="ph-label">img/grader-02-report.png</div>
-      <div class="ph-hint">Captura nueva: página de resultados con el gauge y categorías</div>
-    </div>
-    <div class="screenshot-placeholder">
-      <div class="ph-label">img/grader-03-checks.png</div>
-      <div class="ph-hint">Captura nueva: detalle de checks con recomendaciones</div>
-    </div>
+    <img src="img/grader-02-report.png" alt="Shopify Store Grader — report view" class="portfolio-img">
+    <img src="img/grader-03-checks.png" alt="Shopify Store Grader — check details" class="portfolio-img">
   </div>
 
   <div class="section-title">Key Metrics</div>
@@ -725,7 +766,7 @@
   const lbClose = document.getElementById('lightboxClose');
 
   document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('portfolio-img')) {
+    if (e.target.classList.contains('portfolio-img') || e.target.classList.contains('profile-pic')) {
       lbImg.src = e.target.src;
       lbImg.alt = e.target.alt;
       overlay.classList.add('active');
