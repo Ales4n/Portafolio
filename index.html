@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alessandro Sansossio — Portfolio</title>
+<title>Shopify Launch | Tiendas online para pequeñas marcas — Alessandro Sansossio</title>
+<meta name="description" content="Lanza tu tienda Shopify con diseño profesional, hasta 10 productos y configuración básica de pagos y envíos. Oferta Fundadores de 350 € para 3 proyectos piloto.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shopify Launch · Tu tienda online en 14 días laborables">
+<meta property="og:description" content="Lanza tu tienda Shopify sin complicaciones técnicas. Oferta Fundadores de 350 € para los tres primeros proyectos piloto.">
+<meta property="og:url" content="https://portafolio-opal-tau-44.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -445,6 +450,63 @@
 
   .footer-inner a { color: var(--accent); text-decoration: none; }
 
+
+  /* ===== LANDING & SHOPIFY LAUNCH ===== */
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 26px; }
+  .page--landing { padding-bottom: 45px; }
+  .site-nav { display: flex; gap: 20px; flex-wrap: wrap; margin: 28px 0 0; }
+  .site-nav a { color: var(--ink-soft); font-family: var(--font-mono); font-size: .72rem; text-decoration: none; border-bottom: 1px solid transparent; }
+  .site-nav a:hover, .site-nav a:focus-visible { color: var(--accent); border-color: currentColor; }
+  .hero { padding: 18px 0 44px; }
+  .eyebrow { font-family: var(--font-mono); color: var(--accent); font-size: .72rem; letter-spacing: .11em; text-transform: uppercase; margin-bottom: 14px; }
+  .hero h1 { font-family: var(--font-display); font-weight: 500; line-height: 1.13; letter-spacing: -.025em; font-size: clamp(2.4rem, 6vw, 4.25rem); max-width: 780px; }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-intro { color: var(--ink-soft); font-size: 1.07rem; line-height: 1.8; margin: 20px 0 25px; max-width: 670px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn { display: inline-flex; justify-content: center; align-items: center; gap: 8px; font-family: var(--font-body); font-size: .87rem; font-weight: 700; text-decoration: none; border-radius: 8px; padding: 13px 20px; transition: transform .2s ease, background .2s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #4e46e4; }
+  .btn-secondary { border: 1px solid var(--border); color: var(--ink); background: var(--surface); }
+  .btn-secondary:hover { border-color: var(--accent); }
+  .offer { background: var(--surface); border: 1px solid #dcd9ff; box-shadow: 0 8px 35px rgba(10,37,64,.045); padding: clamp(24px, 4vw, 36px); border-radius: 16px; margin: 0 0 48px; }
+  .offer-top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .offer-tag { display: inline-block; background: var(--accent-soft); color: var(--accent); font-family: var(--font-mono); font-size: .7rem; font-weight: 500; padding: 7px 11px; border-radius: 100px; }
+  .offer h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 500; line-height: 1.22; margin: 16px 0 10px; }
+  .offer-lead { color: var(--ink-soft); margin-bottom: 20px; }
+  .offer-stats { display: flex; gap: 24px; flex-wrap: wrap; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 20px 0; margin-bottom: 24px; }
+  .offer-stat { flex: 1; min-width: 165px; }
+  .offer-stat strong { font-family: var(--font-display); font-size: 2rem; line-height: 1.2; font-weight: 600; display: block; }
+  .offer-stat span { color: var(--ink-muted); font-size: .77rem; }
+  .offer-checklist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 22px; list-style: none; margin: 16px 0 22px; }
+  .offer-checklist li { position: relative; padding-left: 22px; color: var(--ink-soft); font-size: .85rem; }
+  .offer-checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .offer-guarantee { border-left: 3px solid var(--accent); padding: 11px 14px; background: var(--accent-soft); margin: 22px 0; font-size: .87rem; color: var(--ink-soft); }
+  .offer-note { color: var(--ink-muted); font-size: .73rem; line-height: 1.75; margin-top: 16px; }
+  .services { margin: 40px 0 48px; }
+  .services h2, .intro-projects h2, .contact-cta h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 500; margin-bottom: 12px; }
+  .services-intro { color: var(--ink-soft); margin-bottom: 16px; }
+  .intro-projects { padding: 6px 0 30px; }
+  .intro-projects p { color: var(--ink-soft); margin-bottom: 14px; }
+  .case-links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .case-links a { color: var(--accent); font-size: .82rem; text-decoration: none; border-bottom: 1px solid currentColor; }
+  .contact-cta { background: var(--chip-bg); border-radius: 14px; padding: 30px; margin-top: 32px; }
+  .contact-cta h2 { color: #fff; }
+  .contact-cta p { color: rgba(255,255,255,.74); margin-bottom: 17px; }
+  .contact-cta .btn-secondary { background: #fff; }
+  .metrics-context { font-size: .76rem; line-height: 1.55; color: var(--ink-muted); margin-top: 13px; }
+  @media (max-width: 640px) {
+    .offer-checklist { grid-template-columns: 1fr; }
+    .hero { padding: 16px 0 32px; }
+    .offer { padding: 23px 20px; }
+    .btn { width: 100%; }
+    .cta-row { align-items: stretch; }
+    .site-nav { gap: 13px; }
+    .contact-cta { padding: 25px 20px; }
+  }
+  @media print { .btn, .site-nav { display:none!important; } .offer { box-shadow:none; } }
   /* ===== PRINT ===== */
   @media print {
     .lightbox-overlay { display: none !important; }
@@ -477,287 +539,220 @@
 </head>
 <body>
 
-<!-- ============ PAGE 1: TAPPER GOURMET ============ -->
-<div class="page">
 
+<!-- ============ INICIO: SHOPIFY LAUNCH ============ -->
+<div class="page page--landing" id="inicio">
   <header class="profile">
     <img src="img/linkedinbanner.png" alt="" class="profile-banner">
     <div class="profile-row">
       <div class="profile-main">
-        <img src="img/profile-pic.png" alt="Alessandro Sansossio" class="profile-pic">
+        <img src="img/profile-pic.png" alt="Retrato de Alessandro Sansossio" class="profile-pic">
         <div class="profile-id">
           <div class="header-name">Alessandro Sansossio<span class="dot">.</span></div>
-          <div class="header-role">Shopify & Meta Ads · eCommerce Growth</div>
+          <div class="header-role">Shopify · Ecommerce · Implementación y automatización</div>
         </div>
       </div>
       <div class="header-meta">
-        Valencia, Spain<br>
-        <a href="https://www.linkedin.com/in/alessandro-sansossio/" target="_blank" rel="noopener">linkedin.com/in/alessandro-sansossio</a><br>
-        sansossiobss@gmail.com
+        Valencia, España<br>
+        <a href="https://www.linkedin.com/in/alessandro-sansossio/" target="_blank" rel="noopener noreferrer">Mi LinkedIn</a><br>
+        <a href="mailto:sansossiobss@gmail.com">sansossiobss@gmail.com</a>
       </div>
     </div>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="#oferta">Oferta Fundadores</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos reales</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
-  <div class="case-label">Case Study 01</div>
-  <h1 class="case-title">Tapper Gourmet</h1>
-  <p class="case-subtitle">Premium gourmet meal delivery — Valencia, Spain</p>
-  <span class="case-status">Own brand · Closed Apr 2026 after unit-economics analysis</span>
+  <section class="hero" aria-labelledby="hero-title">
+    <p class="eyebrow">Shopify Launch · Para pequeñas marcas y emprendedores</p>
+    <h1 id="hero-title">Tus productos están listos. <em>Tu tienda online también puede estarlo en 14 días laborables.</em></h1>
+    <p class="hero-intro">¿Vendes por Instagram, WhatsApp o en una tienda física? Te ayudo a lanzar tu tienda Shopify, configurada para empezar a recibir pedidos, sin tener que aprender a montarla desde cero.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:sansossiobss@gmail.com?subject=Quiero%20lanzar%20mi%20tienda%20Shopify">Quiero lanzar mi tienda ↗</a>
+      <a class="btn btn-secondary" href="#proyectos">Ver mis proyectos ↓</a>
+    </div>
+  </section>
 
-  <div class="meta-row">
-    <div class="meta-item">
-      <div class="meta-label">Role</div>
-      <div class="meta-value">Growth & eCommerce Manager</div>
+  <section class="offer" id="oferta" aria-labelledby="offer-title">
+    <div class="offer-top">
+      <span class="offer-tag">SHOPIFY LAUNCH · OFERTA FUNDADORES</span>
+      <span class="case-status">Precio especial para 3 proyectos piloto</span>
     </div>
-    <div class="meta-item">
-      <div class="meta-label">Scope</div>
-      <div class="meta-value">Full digital infrastructure</div>
+    <h2 id="offer-title">De vender por mensajes a tener tu propia tienda online.</h2>
+    <p class="offer-lead">Me encargo de la configuración inicial para que tengas una tienda profesional basada en Shopify, con lo esencial preparado para recibir pedidos.</p>
+    <div class="offer-stats">
+      <div class="offer-stat"><strong>350 €</strong><span>Precio piloto · impuestos aplicables no incluidos</span></div>
+      <div class="offer-stat"><strong>14 días</strong><span>Laborables desde recibir materiales y accesos</span></div>
     </div>
-    <div class="meta-item">
-      <div class="meta-label">Timeline</div>
-      <div class="meta-value">Jun 2024 — Apr 2026</div>
+    <div class="section-title">Todo lo incluido</div>
+    <ul class="offer-checklist">
+      <li>Diseño y configuración sobre un tema gratuito de Shopify adaptado a tu marca.</li>
+      <li>Publicación de hasta 10 productos, con imágenes y textos que facilites.</li>
+      <li>Configuración básica de pagos y de una zona de envíos.</li>
+      <li>Tienda adaptable a ordenador y móvil.</li>
+      <li>Páginas de inicio, catálogo, producto, contacto y páginas informativas.</li>
+      <li>Revisión de navegación, carrito y flujo de compra antes de entregar.</li>
+      <li>Formación individual de 30 minutos y un vídeo explicativo de gestión.</li>
+      <li>14 días de soporte para corregir errores atribuibles a mi implementación.</li>
+    </ul>
+    <div class="offer-guarantee"><strong>Garantía de entrega.</strong> Si no entrego las funcionalidades acordadas y verificadas dentro del plazo por causas atribuibles a mi trabajo, te devuelvo el importe pagado.</div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:sansossiobss@gmail.com?subject=Shopify%20Launch%20%E2%80%94%20Oferta%20Fundadores">Quiero lanzar mi tienda ↗</a>
+      <a class="btn btn-secondary" href="#contacto">Consultar si encaja mi proyecto</a>
     </div>
-  </div>
+    <p class="offer-note"><strong>Para quién es:</strong> negocios con productos, precios, fotografías y materiales básicos preparados. <strong>No incluye:</strong> suscripción Shopify, dominio, aplicaciones o servicios de pago, textos legales o asesoramiento legal, desarrollo a medida, catálogo superior a 10 productos, más zonas de envío ni garantía de ventas. Las páginas legales requieren textos proporcionados y revisados por el negocio. La activación final de proveedores de pago depende de su aprobación. Ampliaciones, fuera del precio piloto.</p>
+  </section>
 
-  <div class="tags">
-    <span class="tag">Shopify</span>
-    <span class="tag">Liquid</span>
-    <span class="tag">Meta Ads</span>
-    <span class="tag">Email Marketing</span>
-    <span class="tag">Shopify Flow</span>
-    <span class="tag">Make.com</span>
-    <span class="tag">Content Strategy</span>
-    <span class="tag">Copywriting</span>
-  </div>
+  <section class="services" id="servicios" aria-labelledby="services-title">
+    <h2 id="services-title">Otros servicios Shopify</h2>
+    <p class="services-intro">Si ya tienes una tienda o necesitas algo fuera de Shopify Launch, podemos definir un presupuesto por alcance.</p>
+    <div class="work-grid">
+      <div class="work-card"><div class="work-card-title">Mejoras de tiendas existentes</div><div class="work-card-desc">Revisión de navegación, fichas de producto, contenidos y experiencia móvil, con implementación de mejoras acordadas.</div></div>
+      <div class="work-card"><div class="work-card-title">Configuración y desarrollo Shopify</div><div class="work-card-desc">Organización del catálogo, páginas, colecciones, temas y funciones estándar que necesite tu negocio.</div></div>
+      <div class="work-card"><div class="work-card-title">Automatización ecommerce</div><div class="work-card-desc">Análisis de tareas repetitivas e implementación de flujos sencillos cuando el alcance técnico esté definido y validado.</div></div>
+      <div class="work-card"><div class="work-card-title">Trabajo directo contigo</div><div class="work-card-desc">Un interlocutor que ha gestionado su propio ecommerce y entiende necesidades técnicas y comerciales de una pequeña marca.</div></div>
+    </div>
+  </section>
 
-  <div class="section-title">Overview</div>
-  <p class="summary">Built and ran the entire digital system for a premium meal delivery brand in Valencia — custom Shopify store, full-funnel Meta Ads, post-purchase email automation and content. When the numbers showed the local-delivery model couldn't sustain paid acquisition profitably, I made the call to close it. Building it taught me the stack; closing it taught me to read a business.</p>
-
-  <div class="section-title">Work Delivered</div>
-  <div class="work-grid">
-    <div class="work-card">
-      <div class="work-card-title">Shopify Store</div>
-      <div class="work-card-desc">Custom theme (Taste), Liquid sections, postal code validator, conversion-focused homepage, weekly menu selector, subscription pages.</div>
+  <section class="intro-projects" id="proyectos" aria-labelledby="projects-title">
+    <h2 id="projects-title">Experiencia real, no solo teoría.</h2>
+    <p>Estos son proyectos propios y colaboraciones que muestran cómo trabajo con Shopify, ecommerce y herramientas digitales. Los datos publicados son contextuales, no promesas de resultados.</p>
+    <div class="case-links">
+      <a href="#tapper">TapperGourmet ↓</a>
+      <a href="#maniqui">Maniquí Creaciones ↓</a>
+      <a href="#grader">Shopify Store Grader ↓</a>
     </div>
-    <div class="work-card">
-      <div class="work-card-title">Meta Ads</div>
-      <div class="work-card-desc">Conversion campaigns with funnel strategy: Welcome Pack as entry point to weekly subscription. Video + static creatives.</div>
-    </div>
-    <div class="work-card">
-      <div class="work-card-title">Email Retention</div>
-      <div class="work-card-desc">4-email post-purchase flow over 10 days built with Shopify Flow, converting one-time buyers into weekly subscribers.</div>
-    </div>
-    <div class="work-card">
-      <div class="work-card-title">Automation</div>
-      <div class="work-card-desc">Make.com workflows connected to Google Sheets for order tracking and weekly dish selection per customer.</div>
-    </div>
-    <div class="work-card">
-      <div class="work-card-title">Content & Creative</div>
-      <div class="work-card-desc">Instagram strategy (5 content pillars), product photography, video editing, ad creatives and copywriting.</div>
-    </div>
-  </div>
-
-  <div class="section-title">Visual Evidence</div>
-  <div class="screenshot-grid">
-    <div class="screenshot-full">
-      <img src="img/tapper-01-homepage.png" alt="Tapper Gourmet — Shopify homepage" class="portfolio-img">
-    </div>
-    <img src="img/tapper-02.jpg" alt="Tapper Gourmet — store section" class="portfolio-img">
-    <img src="img/tapper-03.png" alt="Tapper Gourmet — store section" class="portfolio-img">
-    <img src="img/tapper-04.jpg" alt="Tapper Gourmet — Meta Ads creative" class="portfolio-img">
-    <img src="img/tapper-05.png" alt="Tapper Gourmet — Meta Ads results" class="portfolio-img">
-  </div>
-
-  <div class="section-title">Key Metrics</div>
-  <div class="highlights">
-    <div class="highlight-card">
-      <div class="highlight-value">€0.13</div>
-      <div class="highlight-label">Cost per click (Meta)</div>
-    </div>
-    <div class="highlight-card">
-      <div class="highlight-value">3.59%</div>
-      <div class="highlight-label">CTR (Meta)</div>
-    </div>
-    <div class="highlight-card">
-      <div class="highlight-value">4 / 10d</div>
-      <div class="highlight-label">Retention flow (emails / days)</div>
-    </div>
-  </div>
-
+  </section>
 </div>
 
-<!-- ============ PAGE 2: MANIQUÍ CREACIONES ============ -->
-<div class="page">
-
-  <div class="case-label">Case Study 02</div>
-  <h1 class="case-title">Maniquí Creaciones</h1>
-  <p class="case-subtitle">Online clothing alteration service — Valencia, Spain</p>
-  <a class="case-url" href="https://maniquicreaciones.com" target="_blank" rel="noopener">maniquicreaciones.com</a>
-
+<!-- ============ PROYECTO 1: TAPPER GOURMET ============ -->
+<div class="page" id="tapper">
+  <div class="case-label">Proyecto 01 · Ecommerce propio</div>
+  <h2 class="case-title">TapperGourmet</h2>
+  <p class="case-subtitle">Platos gourmet a domicilio · Valencia</p>
+  <span class="case-status">Marca propia · Proyecto finalizado en 2026</span>
   <div class="meta-row">
-    <div class="meta-item">
-      <div class="meta-label">Role</div>
-      <div class="meta-value">Digital Consultant</div>
-    </div>
-    <div class="meta-item">
-      <div class="meta-label">Scope</div>
-      <div class="meta-value">Web, Ads & Email</div>
-    </div>
-    <div class="meta-item">
-      <div class="meta-label">Timeline</div>
-      <div class="meta-value">Jan 2026 — Present</div>
-    </div>
+    <div class="meta-item"><div class="meta-label">Mi rol</div><div class="meta-value">Gestión de ecommerce y crecimiento</div></div>
+    <div class="meta-item"><div class="meta-label">Ámbito</div><div class="meta-value">Shopify, operaciones y marketing</div></div>
+    <div class="meta-item"><div class="meta-label">Periodo</div><div class="meta-value">2024–2026</div></div>
   </div>
-
-  <div class="tags">
-    <span class="tag">Shopify</span>
-    <span class="tag">Meta Ads</span>
-    <span class="tag">Email Marketing</span>
-    <span class="tag">UX Design</span>
-    <span class="tag">Copywriting</span>
-    <span class="tag">Local Business</span>
-  </div>
-
-  <div class="section-title">Overview</div>
-  <p class="summary">Designed, built and launched the complete digital presence for a local clothing alteration service — a Shopify store optimized for service bookings, geo-targeted Meta Ads in Valencia, and ongoing email marketing. Live store, real client, real budget.</p>
-
-  <div class="section-title">Work Delivered</div>
+  <div class="tags"><span class="tag">Shopify</span><span class="tag">Meta Ads</span><span class="tag">Appstle</span><span class="tag">Email</span><span class="tag">Estrategia comercial</span></div>
+  <div class="section-title">El proyecto</div>
+  <p class="summary">Desarrollé y gestioné el ecommerce de una marca de comida preparada premium. Trabajé en la presentación de productos, experiencia de compra, campañas digitales, suscripciones y seguimiento de indicadores comerciales. El negocio terminó cerrando; es una experiencia operativa real, no un caso que presento como éxito de rentabilidad.</p>
+  <div class="section-title">Trabajo realizado</div>
   <div class="work-grid">
-    <div class="work-card">
-      <div class="work-card-title">Shopify Store</div>
-      <div class="work-card-desc">Full store design from scratch in 15 days. Homepage, pricing page, service booking flow and contact page — optimized for service conversion.</div>
-    </div>
-    <div class="work-card">
-      <div class="work-card-title">Meta Ads</div>
-      <div class="work-card-desc">Campaign management on a €100/month budget. Geo-targeted to Valencia with conversion objective.</div>
-    </div>
-    <div class="work-card">
-      <div class="work-card-title">Email Marketing</div>
-      <div class="work-card-desc">Customer communication setup and ongoing email marketing management.</div>
-    </div>
+    <div class="work-card"><div class="work-card-title">Tienda Shopify</div><div class="work-card-desc">Configuración de tienda, catálogo, páginas de producto y experiencia de compra en móvil.</div></div>
+    <div class="work-card"><div class="work-card-title">Adquisición digital</div><div class="work-card-desc">Creatividades y campañas Meta Ads; seguimiento de métricas de captación y coste.</div></div>
+    <div class="work-card"><div class="work-card-title">Recurrencia</div><div class="work-card-desc">Configuración de suscripciones con Appstle y trabajo en comunicación con clientes recurrentes.</div></div>
+    <div class="work-card"><div class="work-card-title">Análisis del negocio</div><div class="work-card-desc">Seguimiento del ticket medio, conversión y frecuencia de compra para orientar decisiones.</div></div>
   </div>
-
-  <div class="section-title">Visual Evidence</div>
+  <div class="section-title">Evidencia visual</div>
   <div class="screenshot-grid">
-    <div class="screenshot-full">
-      <img src="img/maniqui-01-homepage.png" alt="Maniquí Creaciones — homepage" class="portfolio-img">
-    </div>
-    <img src="img/maniqui-02-services.png" alt="Maniquí Creaciones — services page" class="portfolio-img">
-    <img src="img/maniqui-03-booking.png" alt="Maniquí Creaciones — booking flow" class="portfolio-img">
-    <img src="img/maniqui-04-mobile.png" alt="Maniquí Creaciones — mobile view" class="portfolio-img">
+    <div class="screenshot-full"><img loading="lazy" src="img/tapper-01-homepage.png" alt="Página de inicio de TapperGourmet en Shopify" class="portfolio-img"></div>
+    <img loading="lazy" src="img/tapper-02.jpg" alt="Detalle del ecommerce TapperGourmet" class="portfolio-img">
+    <img loading="lazy" src="img/tapper-03.png" alt="Página de producto de TapperGourmet" class="portfolio-img">
+    <img loading="lazy" src="img/tapper-04.jpg" alt="Creatividad de Meta Ads para TapperGourmet" class="portfolio-img">
+    <img loading="lazy" src="img/tapper-05.png" alt="Captura de métricas de publicidad de TapperGourmet" class="portfolio-img">
   </div>
-
-  <div class="section-title">Key Metrics</div>
+  <div class="section-title">Indicadores históricos</div>
   <div class="highlights">
-    <div class="highlight-card">
-      <div class="highlight-value">15 days</div>
-      <div class="highlight-label">Store built & launched</div>
-    </div>
-    <div class="highlight-card">
-      <div class="highlight-value">€0.20</div>
-      <div class="highlight-label">Cost per click (Meta)</div>
-    </div>
-    <div class="highlight-card">
-      <div class="highlight-value">€100/mo</div>
-      <div class="highlight-label">Ad budget managed</div>
-    </div>
+    <div class="highlight-card"><div class="highlight-value">44,90 €</div><div class="highlight-label">Ticket medio aprox.</div></div>
+    <div class="highlight-card"><div class="highlight-value">1,04 %</div><div class="highlight-label">Conversión de tienda</div></div>
+    <div class="highlight-card"><div class="highlight-value">Shopify</div><div class="highlight-label">Tienda gestionada</div></div>
   </div>
-
+  <p class="metrics-context">Datos operativos de agosto de 2025. Describen la actividad del ecommerce, no un incremento atribuible a una optimización.</p>
 </div>
 
-<!-- ============ PAGE 3: SHOPIFY STORE GRADER ============ -->
-<div class="page">
-
-  <div class="case-label">Case Study 03</div>
-  <h1 class="case-title">Shopify Store Grader</h1>
-  <p class="case-subtitle">Free audit tool for Shopify stores — built from scratch</p>
-  <a class="case-url" href="https://shopify-grader.vercel.app" target="_blank" rel="noopener">shopify-grader.vercel.app</a>
-
+<!-- ============ PROYECTO 2: MANIQUÍ CREACIONES ============ -->
+<div class="page" id="maniqui">
+  <div class="case-label">Proyecto 02 · Negocio local</div>
+  <h2 class="case-title">Maniquí Creaciones</h2>
+  <p class="case-subtitle">Taller de arreglos de ropa y servicios de costura · Valencia</p>
+  <a class="case-url" href="https://maniquicreaciones.com" target="_blank" rel="noopener noreferrer">maniquicreaciones.com</a>
   <div class="meta-row">
-    <div class="meta-item">
-      <div class="meta-label">Role</div>
-      <div class="meta-value">Design, code & product</div>
-    </div>
-    <div class="meta-item">
-      <div class="meta-label">Scope</div>
-      <div class="meta-value">Full-stack web tool</div>
-    </div>
-    <div class="meta-item">
-      <div class="meta-label">Timeline</div>
-      <div class="meta-value">2026 — Live</div>
-    </div>
+    <div class="meta-item"><div class="meta-label">Mi rol</div><div class="meta-value">Diseño y desarrollo digital</div></div>
+    <div class="meta-item"><div class="meta-label">Ámbito</div><div class="meta-value">Tienda, servicios y captación</div></div>
+    <div class="meta-item"><div class="meta-label">Periodo</div><div class="meta-value">2026</div></div>
   </div>
-
-  <div class="tags">
-    <span class="tag">Node.js</span>
-    <span class="tag">Serverless</span>
-    <span class="tag">Vercel</span>
-    <span class="tag">PageSpeed API</span>
-    <span class="tag">AI Integration</span>
-    <span class="tag">UI Design</span>
-    <span class="tag">HTML/CSS/JS</span>
-  </div>
-
-  <div class="section-title">Overview</div>
-  <p class="summary">A tool that analyzes any Shopify store from its public URL and scores it 0–100 across SEO, performance, Shopify configuration and content quality — with actionable recommendations per check. I designed the interface, wrote the scoring logic and shipped it on Vercel serverless. It exists because auditing stores by hand was slow; now the first diagnosis takes 30 seconds.</p>
-
-  <div class="section-title">Work Delivered</div>
+  <div class="tags"><span class="tag">Shopify</span><span class="tag">Diseño UX</span><span class="tag">Meta Ads</span><span class="tag">Negocio local</span></div>
+  <div class="section-title">El proyecto</div>
+  <p class="summary">Trabajo digital para un taller de costura de Valencia: desarrollo de su presencia online en Shopify, presentación de servicios y soporte a iniciativas comerciales locales. El objetivo era facilitar que los clientes entendieran los servicios disponibles y pudieran contactar o reservar según el servicio.</p>
+  <div class="section-title">Trabajo realizado</div>
   <div class="work-grid">
-    <div class="work-card">
-      <div class="work-card-title">Audit Engine</div>
-      <div class="work-card-desc">26 automated checks across 4 categories: on-page SEO, Core Web Vitals via PageSpeed API, Shopify configuration and content signals.</div>
-    </div>
-    <div class="work-card">
-      <div class="work-card-title">AI Analysis Layer</div>
-      <div class="work-card-desc">AI-powered evaluation of homepage copy, product descriptions and CTA effectiveness, returning structured scores and recommendations.</div>
-    </div>
-    <div class="work-card">
-      <div class="work-card-title">UI & Report Design</div>
-      <div class="work-card-desc">Score gauge, category breakdowns, expandable check details and per-check recommendations. Designed mobile-first with a token-based CSS system.</div>
-    </div>
-    <div class="work-card">
-      <div class="work-card-title">Infrastructure</div>
-      <div class="work-card-desc">Vercel serverless functions, HTML parsing with Cheerio, graceful degradation when external APIs fail. No frameworks — vanilla stack by design.</div>
-    </div>
+    <div class="work-card"><div class="work-card-title">Web y Shopify</div><div class="work-card-desc">Diseño y puesta en marcha de páginas de inicio, servicios, información y contacto.</div></div>
+    <div class="work-card"><div class="work-card-title">Experiencia móvil</div><div class="work-card-desc">Presentación clara de los servicios para clientes que visitan la web desde su teléfono.</div></div>
+    <div class="work-card"><div class="work-card-title">Marketing local</div><div class="work-card-desc">Trabajo con campañas Meta Ads y contenidos adaptados al público de Valencia.</div></div>
   </div>
-
-  <div class="section-title">Visual Evidence</div>
+  <div class="section-title">Evidencia visual</div>
   <div class="screenshot-grid">
-    <div class="screenshot-full">
-      <img src="img/grader-01-landing.png" alt="Shopify Store Grader — landing" class="portfolio-img">
-    </div>
-    <img src="img/grader-02-report.png" alt="Shopify Store Grader — report view" class="portfolio-img">
-    <img src="img/grader-03-checks.png" alt="Shopify Store Grader — check details" class="portfolio-img">
+    <div class="screenshot-full"><img loading="lazy" src="img/maniqui-01-homepage.png" alt="Página de inicio de Maniquí Creaciones" class="portfolio-img"></div>
+    <img loading="lazy" src="img/maniqui-02-services.png" alt="Página de servicios de Maniquí Creaciones" class="portfolio-img">
+    <img loading="lazy" src="img/maniqui-03-booking.png" alt="Proceso de reserva presentado en la web de Maniquí" class="portfolio-img">
+    <img loading="lazy" src="img/maniqui-04-mobile.png" alt="Versión móvil de Maniquí Creaciones" class="portfolio-img">
   </div>
-
-  <div class="section-title">Key Metrics</div>
+  <div class="section-title">Indicadores de ejecución</div>
   <div class="highlights">
-    <div class="highlight-card">
-      <div class="highlight-value">26</div>
-      <div class="highlight-label">Automated checks</div>
-    </div>
-    <div class="highlight-card">
-      <div class="highlight-value">~30s</div>
-      <div class="highlight-label">Full store audit</div>
-    </div>
-    <div class="highlight-card">
-      <div class="highlight-value">0→1</div>
-      <div class="highlight-label">Designed, coded & shipped solo</div>
-    </div>
+    <div class="highlight-card"><div class="highlight-value">15 días</div><div class="highlight-label">Desarrollo inicial</div></div>
+    <div class="highlight-card"><div class="highlight-value">Shopify</div><div class="highlight-label">Plataforma de la web</div></div>
+    <div class="highlight-card"><div class="highlight-value">Valencia</div><div class="highlight-label">Negocio local</div></div>
   </div>
+  <p class="metrics-context">Los 15 días corresponden al trabajo descrito en el proyecto. No implican que cualquier tienda pueda desarrollarse con el mismo alcance o plazo.</p>
+</div>
 
+<!-- ============ PROYECTO 3: SHOPIFY STORE GRADER ============ -->
+<div class="page" id="grader">
+  <div class="case-label">Proyecto 03 · Herramienta propia</div>
+  <h2 class="case-title">Shopify Store Grader</h2>
+  <p class="case-subtitle">Herramienta de análisis orientativo de tiendas Shopify</p>
+  <a class="case-url" href="https://shopify-grader.vercel.app" target="_blank" rel="noopener noreferrer">Probar Shopify Store Grader ↗</a>
+  <div class="meta-row">
+    <div class="meta-item"><div class="meta-label">Mi rol</div><div class="meta-value">Diseño, desarrollo y producto</div></div>
+    <div class="meta-item"><div class="meta-label">Enfoque</div><div class="meta-value">Diagnóstico web automatizado</div></div>
+    <div class="meta-item"><div class="meta-label">Periodo</div><div class="meta-value">2026</div></div>
+  </div>
+  <div class="tags"><span class="tag">JavaScript</span><span class="tag">Serverless</span><span class="tag">Vercel</span><span class="tag">PageSpeed API</span><span class="tag">UI</span></div>
+  <div class="section-title">El proyecto</div>
+  <p class="summary">Desarrollé una herramienta que analiza señales públicas de una tienda Shopify y genera comprobaciones orientativas sobre SEO, rendimiento, configuración y contenidos. Sus resultados automáticos son un punto de partida: los hallazgos relevantes se deben verificar antes de tomar decisiones.</p>
+  <div class="section-title">Componentes</div>
+  <div class="work-grid">
+    <div class="work-card"><div class="work-card-title">Motor de auditoría</div><div class="work-card-desc">26 comprobaciones automatizadas agrupadas en cuatro categorías.</div></div>
+    <div class="work-card"><div class="work-card-title">Informe visual</div><div class="work-card-desc">Puntuación global, detalle por categorías y recomendaciones para revisar manualmente.</div></div>
+    <div class="work-card"><div class="work-card-title">Diseño e interfaz</div><div class="work-card-desc">Presentación clara de señales y resultados, también en pantallas pequeñas.</div></div>
+    <div class="work-card"><div class="work-card-title">Infraestructura</div><div class="work-card-desc">Aplicación web desplegada en Vercel, con integraciones externas según disponibilidad.</div></div>
+  </div>
+  <div class="section-title">Evidencia visual</div>
+  <div class="screenshot-grid">
+    <div class="screenshot-full"><img loading="lazy" src="img/grader-01-landing.png" alt="Portada de Shopify Store Grader" class="portfolio-img"></div>
+    <img loading="lazy" src="img/grader-02-report.png" alt="Informe de Shopify Store Grader" class="portfolio-img">
+    <img loading="lazy" src="img/grader-03-checks.png" alt="Detalle de comprobaciones de Shopify Store Grader" class="portfolio-img">
+  </div>
+  <div class="section-title">Características</div>
+  <div class="highlights">
+    <div class="highlight-card"><div class="highlight-value">26</div><div class="highlight-label">Comprobaciones</div></div>
+    <div class="highlight-card"><div class="highlight-value">4</div><div class="highlight-label">Categorías de análisis</div></div>
+    <div class="highlight-card"><div class="highlight-value">0–100</div><div class="highlight-label">Escala orientativa</div></div>
+  </div>
+  <div class="contact-cta" id="contacto">
+    <h2>¿Quieres lanzar tu tienda?</h2>
+    <p>Cuéntame qué vendes, cuántos productos tienes y en qué punto estás. Te confirmaré si Shopify Launch encaja con tu proyecto y qué necesitaríamos para empezar.</p>
+    <a class="btn btn-secondary" href="mailto:sansossiobss@gmail.com?subject=Consulta%20Shopify%20Launch">Consultar mi proyecto ↗</a>
+  </div>
 </div>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    Alessandro Sansossio · Valencia, Spain<br>
-    <a href="mailto:sansossiobss@gmail.com">sansossiobss@gmail.com</a> · <a href="https://www.linkedin.com/in/alessandro-sansossio/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://shopify-grader.vercel.app" target="_blank" rel="noopener">Shopify Store Grader</a>
+    Alessandro Sansossio · Valencia, España<br>
+    <a href="mailto:sansossiobss@gmail.com">sansossiobss@gmail.com</a> · <a href="https://www.linkedin.com/in/alessandro-sansossio/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://shopify-grader.vercel.app" target="_blank" rel="noopener noreferrer">Shopify Store Grader</a>
   </div>
 </footer>
 
 <!-- LIGHTBOX -->
 <div class="lightbox-overlay" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
-  <img src="" alt="Enlarged view" id="lightboxImg">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen ampliada">&times;</button>
+  <img src="" alt="Imagen ampliada" id="lightboxImg">
 </div>
 
 <script>
